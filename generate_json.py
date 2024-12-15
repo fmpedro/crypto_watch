@@ -12,7 +12,8 @@ import os
 load_dotenv()
 api_key = os.getenv("COINGECKO_API_KEY")
 
-charts_path = './crypto_charts/'
+charts_path = './images/crypto_charts/'
+days = '60'
 
 tickers_to_watch = {
     "bitcoin": {"token": "BTC", "name": "Bitcoin (BTC)", "color": "orange"},
@@ -86,8 +87,8 @@ def main():
 
     # generate charts for the double line plots (comparing 2 tokens)
     for (ticker1 , ticker2) in token_pairs:
-        data1 = get_market_chart(ticker1, days='30')
-        data2 = get_market_chart(ticker2, days='30')
+        data1 = get_market_chart(ticker1, days=days)
+        data2 = get_market_chart(ticker2, days=days)
         figure_path = charts_path + tickers_to_watch[ticker1]['token'] + '_' + tickers_to_watch[ticker2]['token'] + '.png'
         generate_2_line_plot(
             data1['datetime'],
@@ -110,9 +111,9 @@ def main():
 
     # generate charts for the single line plots
     for ticker in tickers_to_watch:
-        if ticker in ['bitcoin','ethereum','axie-infinity','smooth-love-potion']:
+        if ticker in ['bitcoin','ethereum','axie-infinity','ronin']:
             continue
-        data = get_market_chart(ticker, days='30')
+        data = get_market_chart(ticker, days=days)
         figure_path = charts_path + tickers_to_watch[ticker]['token'] + '.png'
         generate_1_line_plot(
             data['datetime'],

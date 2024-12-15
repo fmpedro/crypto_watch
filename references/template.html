@@ -13,9 +13,9 @@
     
     <div class="container">
         {% for chart in charts %}
-        <div class="book-tile">
-            <a href="https://www.coingecko.com/en/coins/{{ chart.ticker }}"><h3>{{ chart.title }}</h3></a>
-            <img src="{{ chart.figure_path }}" alt="{{ chart.title }} chart">
+        <div class="chart-tile">
+            <h3>{{ chart.title }}</h3>
+            <a href="https://www.coingecko.com/en/coins/{{ chart.ticker }}"><img src="{{ chart.figure_path }}" alt="{{ chart.title }} chart"></a>
         </div>
         {% endfor %}
     </div>
