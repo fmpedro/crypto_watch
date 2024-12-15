@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Watch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <center>
+        <h1>Crypto Watch</h1>
+    </center>
+    
+    <div class="container">
+        {% for chart in charts %}
+        <div class="book-tile">
+            <a href="https://www.coingecko.com/en/coins/{{ chart.ticker }}"><h3>{{ chart.title }}</h3></a>
+            <img src="{{ chart.figure_path }}" alt="{{ chart.title }} chart">
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
