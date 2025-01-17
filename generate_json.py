@@ -60,7 +60,7 @@ def get_ohlc(ticker, currency='eur', days='30'):
 
 
 # function generate a 2 lines plot to compare 2 tickers and save it to disk as a png image
-def generate_2_line_plot(x_series1, y_series1, color1, label1, ylabel1, x_series2, y_series2, color2, label2, ylabel2, figsize=(6, 4), plot_path):
+def generate_2_line_plot(x_series1, y_series1, color1, label1, ylabel1, x_series2, y_series2, color2, label2, ylabel2, plot_path, figsize=(6, 4)):
     fig, ax = plt.subplots(figsize=figsize)
     ax.tick_params(axis='x', labelsize=8, rotation=30)
     ax.plot(x_series1, y_series1, color=color1, label=label1)
@@ -76,7 +76,7 @@ def generate_2_line_plot(x_series1, y_series1, color1, label1, ylabel1, x_series
 
 
 # function generate a lines plot to and save it to disk as a png image
-def generate_1_line_plot(x_series, y_series, color, ylabel, figsize=(6, 4), plot_path):
+def generate_1_line_plot(x_series, y_series, color, ylabel, plot_path, figsize=(6, 4)):
     plt.figure(figsize=figsize)
     plt.tick_params(axis='x', labelsize=8, rotation=30)
     plt.plot(x_series, y_series, color=color)
@@ -98,17 +98,17 @@ def main():
         data2 = get_market_chart(ticker2, days=days)
         figure_path = charts_path + tickers_to_watch[ticker1]['token'] + '_' + tickers_to_watch[ticker2]['token'] + '.png'
         generate_2_line_plot(
-            data1['datetime'],
-            data1['price'],
-            tickers_to_watch[ticker1]['color'],
-            tickers_to_watch[ticker1]['token'],
-            tickers_to_watch[ticker1]['name'] + " [EUR]",
-            data2['datetime'],
-            data2['price'],
-            tickers_to_watch[ticker2]['color'],
-            tickers_to_watch[ticker2]['token'],
-            tickers_to_watch[ticker2]['name'] + " [EUR]",
-            figure_path
+            x_series1=data1['datetime'],
+            y_series1=data1['price'],
+            color1=tickers_to_watch[ticker1]['color'],
+            label1=tickers_to_watch[ticker1]['token'],
+            ylabel1=tickers_to_watch[ticker1]['name'] + " [EUR]",
+            x_series2=data2['datetime'],
+            y_series2=data2['price'],
+            color2=tickers_to_watch[ticker2]['color'],
+            label2=tickers_to_watch[ticker2]['token'],
+            ylabel2=tickers_to_watch[ticker2]['name'] + " [EUR]",
+            plot_path=figure_path
         )
         tickers_info.append({
             "ticker": '',
@@ -123,11 +123,11 @@ def main():
         data = get_market_chart(ticker, days=days)
         figure_path = charts_path + tickers_to_watch[ticker]['token'] + '.png'
         generate_1_line_plot(
-            data['datetime'],
-            data['price'],
-            tickers_to_watch[ticker]['color'],
-            tickers_to_watch[ticker]['name'] + " [EUR]",
-            figure_path
+            x_series=data['datetime'],
+            y_series=data['price'],
+            color=tickers_to_watch[ticker]['color'],
+            ylabel=tickers_to_watch[ticker]['name'] + " [EUR]",
+            plot_path=figure_path
         )
         tickers_info.append({
             "ticker": ticker,
