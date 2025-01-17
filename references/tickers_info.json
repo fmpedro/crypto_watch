@@ -1,32 +1,47 @@
 [
   {
     "ticker": "",
-    "figure_path": "./images/crypto_charts/BTC_ETH.png",
-    "title": "Bitcoin (BTC) vs. Ethereum (ETH) Chart"
+    "figure_path": "./crypto_charts/BTC_ETH.png",
+    "title": "Bitcoin (BTC) and Ethereum (ETH) Chart"
   },
   {
     "ticker": "",
-    "figure_path": "./images/crypto_charts/AXS_RON.png",
-    "title": "Axie (AXS) vs. Ronin (RON) Chart"
+    "figure_path": "./crypto_charts/AXS_RON.png",
+    "title": "Axie Infinity (AXS) and Ronin (RON) Chart"
   },
   {
-    "ticker": "smooth-love-potion",
-    "figure_path": "./images/crypto_charts/SLP.png",
-    "title": "SLP Chart"
+    "ticker": "",
+    "figure_path": "./crypto_charts/AXS_SLP.png",
+    "title": "Axie Infinity (AXS) and Smooth Love Potion (SLP) Chart"
+  },
+  {
+    "ticker": "",
+    "figure_path": "./crypto_charts/VIRTUAL_AI16Z.png",
+    "title": "Virtuals Protocol (VIRTUAL) and ai16z (AI16Z) Chart"
   },
   {
     "ticker": "solana",
-    "figure_path": "./images/crypto_charts/SOL.png",
+    "figure_path": "./crypto_charts/SOL.png",
     "title": "Solana (SOL) Chart"
   },
   {
     "ticker": "myria",
-    "figure_path": "./images/crypto_charts/MYRIA.png",
+    "figure_path": "./crypto_charts/MYRIA.png",
     "title": "Myria (MYRIA) Chart"
   },
   {
-    "ticker": "chainlink",
-    "figure_path": "./images/crypto_charts/LINK.png",
-    "title": "Chainlink (LINK) Chart"
+    "ticker": "sui",
+    "figure_path": "./crypto_charts/SUI.png",
+    "title": "Sui (SUI) Chart"
+  },
+  {
+    "ticker": "kaspa",
+    "figure_path": "./crypto_charts/KAS.png",
+    "title": "Kaspa (KAS) Chart"
+  },
+  {
+    "ticker": "gold8",
+    "figure_path": "./crypto_charts/GOLD8.png",
+    "title": "Gold8 (GOLD8) Chart"
   }
 ]
